@@ -29,8 +29,31 @@ NaverMapView(
 ## References
 
 - https://github.com/android/compose-samples/blob/cbede8b51721e546b089c9afffb2792fccd304de/Crane/app/src/main/java/androidx/compose/samples/crane/details/DetailsActivity.kt#L126
-
 - https://github.com/android/compose-samples/blob/34a75fb3672622a3fb0e6a78adc88bbc2886c28f/Crane/app/src/main/java/androidx/compose/samples/crane/details/MapViewUtils.kt
+
+## Example
+
+![screenshot](image/Screenshot_1604472769.png)
+
+```kotlin
+class MainActivity : AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContent {
+            ExampleTheme {
+                // A surface container using the 'background' color from the theme
+                Scaffold(
+                    topBar = {
+                        TopAppBar(title = { Text("NaverMapCompose") })
+                    }
+                ) {
+                    NaverMapView(onMapReady = {})
+                }
+            }
+        }
+    }
+}
+```
 
 ## License
 
