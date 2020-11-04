@@ -15,7 +15,7 @@ dependencies {
 
 ## Usage
 
-- Add `NaverMapView` composable function.
+- Use `NaverMapView` composable function.
 
 ```kotlin
 NaverMapView(
