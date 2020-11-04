@@ -26,6 +26,12 @@ NaverMapView(
 )
 ```
 
+## References
+
+- https://github.com/android/compose-samples/blob/cbede8b51721e546b089c9afffb2792fccd304de/Crane/app/src/main/java/androidx/compose/samples/crane/details/DetailsActivity.kt#L126
+
+- https://github.com/android/compose-samples/blob/34a75fb3672622a3fb0e6a78adc88bbc2886c28f/Crane/app/src/main/java/androidx/compose/samples/crane/details/MapViewUtils.kt
+
 ## License
 
 ```xml
