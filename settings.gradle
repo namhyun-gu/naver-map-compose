@@ -1,0 +1,3 @@
+rootProject.name = "NaverMapCompose"
+include ':app'
+include ':lib'

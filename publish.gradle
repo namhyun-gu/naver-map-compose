@@ -1,0 +1,40 @@
+apply plugin: 'com.jfrog.bintray'
+
+def (bintray_user, bintray_key) = getBintrayProperties()
+
+bintray {
+    user = bintray_user
+    key = bintray_key
+    pkg {
+        repo = "maven"
+        name = "naver-map-compose"
+        userOrg = "namhyun-gu"
+        desc = "Naver Map SDK with Jetpack Compose"
+        websiteUrl = "https://github.com/namhyun-gu/naver-map-compose"
+        vcsUrl = "https://github.com/namhyun-gu/naver-map-compose.git"
+        licenses = ["Apache-2.0"]
+        githubRepo = "https://github.com/namhyun-gu/naver-map-compose"
+
+        version {
+            desc = "Naver Map SDK with Jetpack Compose"
+            name = "0.1.0"
+            released = new Date()
+        }
+    }
+}
+
+def getBintrayProperties() {
+    def filename = "local.properties"
+    def propsFile = rootProject.file(filename)
+    if (propsFile.exists()) {
+        Properties properties = new Properties()
+        properties.load(project.rootProject.file(filename).newDataInputStream())
+        return [
+                properties.getProperty("bintray.user"),
+                properties.getProperty("bintray.key")
+        ]
+    } else {
+        print(filename + " does not exist!")
+        return ["", ""]
+    }
+}
