@@ -1,10 +1,14 @@
 apply plugin: 'com.jfrog.bintray'
+apply plugin: 'maven-publish'
 
 def (bintray_user, bintray_key) = getBintrayProperties()
 
 bintray {
     user = bintray_user
     key = bintray_key
+
+    publications = ["release"]
+
     pkg {
         repo = "maven"
         name = "naver-map-compose"
@@ -19,6 +23,19 @@ bintray {
             desc = "Naver Map SDK with Jetpack Compose"
             name = "0.1.0"
             released = new Date()
+        }
+    }
+}
+
+afterEvaluate {
+    publishing {
+        publications {
+            release(MavenPublication) {
+                from components.release
+                group = "com.github.namhyungu"
+                artifactId = "naver-map-compose"
+                version = "0.1.0"
+            }
         }
     }
 }
