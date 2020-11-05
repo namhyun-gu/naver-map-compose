@@ -8,7 +8,7 @@ Add dependency codes to your **module** level `build.gradle` file.
 
 ```groovy
 dependencies {
-  implementation "com.github.namhyungu.naver-map-compose:0.1.0"
+  implementation 'com.github.namhyungu:naver-map-compose:0.1.0'
   implementation "com.naver.maps:map-sdk:3.9.1"
 }
 ```
